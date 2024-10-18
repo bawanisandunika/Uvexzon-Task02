@@ -1,0 +1,34 @@
+name: task2
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  # Adding assets section for images
+  assets:
+    - lib/assets/background_image.jpeg  # Background image 1
+    - lib/assets/welcome_image.jpeg  # Background image 2
+
+  # Uncomment and add any fonts if necessary.
+  # fonts:
+  #   - family: YourCustomFont
+  #     fonts:
+  #       - asset: fonts/YourCustomFont-Regular.ttf
+  #       - asset: fonts/YourCustomFont-Bold.ttf
