@@ -23,8 +23,8 @@ flutter:
 
   # Adding assets section for images
   assets:
-    - lib/assets/background_image.jpeg  # Background image 1
-    - lib/assets/welcome_image.jpeg  # Background image 2
+    - lib/assests/background_image.jpeg  # Background image 1
+    - lib/assests/welcome_image.jpeg  # Background image 2
 
   # Uncomment and add any fonts if necessary.
   # fonts:
