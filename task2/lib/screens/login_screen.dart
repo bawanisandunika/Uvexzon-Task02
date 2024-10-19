@@ -1,29 +1,33 @@
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
+  const LoginScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: [
-          // Background image
+          // Background Image
           Container(
             width: double.infinity,
             height: double.infinity,
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
-                    'lib/assets/background_image.jpeg'), // Background image path
+                    'lib/assets/login_image.jpg'), // Path to background image
                 fit: BoxFit.cover,
               ),
             ),
           ),
-          // Foreground content
+          // Semi-transparent overlay to dim the background image
           Container(
             width: double.infinity,
             height: double.infinity,
-            color: Colors.black
-                .withOpacity(0.5), // Overlay to make the text more visible
+            color: Colors.white.withOpacity(0.8), // Adjust transparency level
+          ),
+          // Content
+          Center(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30.0),
               child: Column(
@@ -31,106 +35,101 @@ class LoginScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   // Title: Geeta.
-                  Text(
+                  const Text(
                     'Geeta.',
                     style: TextStyle(
-                      fontSize: 45, // Match the given font size
+                      fontSize: 45,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: Colors.black, // Black text color
+                      fontFamily: 'Roboto', // Adjust font family if needed
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
 
                   // Subtitle
-                  Text(
+                  const Text(
                     'Create your fashion\nin your own way',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize:
-                          20, // Adjust subtitle font size as per the interface
-                      color: Colors.white,
-                      fontWeight: FontWeight.w600,
+                      fontSize: 18,
+                      color: Colors.black, // Black text color
+                      fontWeight: FontWeight.bold, // Semi-bold
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
 
-                  // Description text
-                  Text(
+                  // Description
+                  const Text(
                     'Each men and women has their own style, Geeta help you to create your unique style.',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: 14, // Adjust description font size
-                      color: Colors.white.withOpacity(0.9),
+                      fontSize: 14,
+                      color: Colors.black54, // Dark grey text color
                     ),
                   ),
-                  SizedBox(height: 40),
+                  const SizedBox(height: 40),
 
                   // Login Button
                   ElevatedButton(
-                    onPressed: () {
-                      // Logic for Login button
-                    },
+                    onPressed: () {},
                     style: ElevatedButton.styleFrom(
-                      foregroundColor: Colors.black, backgroundColor: Colors.white, // Text color inside the button
+                      foregroundColor: Colors.black, // Text color (black)
+                      backgroundColor:
+                          Colors.white, // Button background (white)
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30),
                         side: BorderSide(
-                            color: Colors.black,
-                            width: 1.5), // Border for the button
+                            color: Colors.black, width: 1.5), // Border color
                       ),
-                      padding: EdgeInsets.symmetric(
-                          vertical: 15, horizontal: 80), // Button size
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 15, horizontal: 80),
                     ),
-                    child: Text(
+                    child: const Text(
                       'LOG IN',
                       style: TextStyle(
-                        fontSize: 16, // Button font size
-                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold, // Bold
                       ),
                     ),
                   ),
-
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
 
                   // OR Divider
                   Row(
-                    children: [
+                    children: const [
                       Expanded(
-                        child: Divider(color: Colors.white),
-                      ),
+                          child: Divider(
+                              color: Colors.black54)), // Dark grey divider
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                        padding: EdgeInsets.symmetric(horizontal: 10.0),
                         child: Text(
                           'OR',
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(
+                              color: Colors.black54), // Dark grey text
                         ),
                       ),
-                      Expanded(
-                        child: Divider(color: Colors.white),
-                      ),
+                      Expanded(child: Divider(color: Colors.black54)),
                     ],
                   ),
-
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
 
                   // Register Button
                   ElevatedButton(
-                    onPressed: () {
-                      // Logic for Register button
-                    },
+                    onPressed: () {},
                     style: ElevatedButton.styleFrom(
-                      foregroundColor: Colors.white, backgroundColor: Color(0xFF5B4FFF), // Text color inside the button
+                      foregroundColor: Colors.white, // White text color
+                      backgroundColor: Color(0xFF6A4FFF), // Purple button color
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30),
                       ),
-                      padding: EdgeInsets.symmetric(
-                          vertical: 15, horizontal: 80), // Button size
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 15, horizontal: 80),
                     ),
-                    child: Text(
+                    child: const Text(
                       'REGISTER',
                       style: TextStyle(
-                        fontSize: 16, // Button font size
-                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold, // Bold
                       ),
                     ),
                   ),

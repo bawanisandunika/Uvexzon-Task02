@@ -1,7 +1,7 @@
-name: task2
+name: geeta_app
 description: "A new Flutter project."
-publish_to: 'none'
 
+publish_to: 'none'
 version: 1.0.0+1
 
 environment:
@@ -10,7 +10,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
   cupertino_icons: ^1.0.6
   device_preview: ^1.2.0
 
@@ -22,14 +21,6 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-  # Adding assets section for images
   assets:
-    - lib/assests/background_image.jpeg  # Background image 1
-    - lib/assests/welcome_image.jpeg  # Background image 2
-
-  # Uncomment and add any fonts if necessary.
-  # fonts:
-  #   - family: YourCustomFont
-  #     fonts:
-  #       - asset: fonts/YourCustomFont-Regular.ttf
-  #       - asset: fonts/YourCustomFont-Bold.ttf
+    - lib/assets/login_image.jpg # Background image
+    - lib/assets/welcome_image.jpeg

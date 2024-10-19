@@ -6,81 +6,86 @@ class WelcomeScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          // Background Image
+          // Background image
           Container(
-            width: double.infinity,
-            height: double.infinity,
-            // ignore: prefer_const_constructors
             decoration: BoxDecoration(
-              // ignore: prefer_const_constructors
               image: DecorationImage(
-                // ignore: prefer_const_constructors
                 image: AssetImage(
-                    'task2/lib/assests/welcome_image.jpeg'), // Your image path
+                    'lib/assets/welcome_image.jpeg'), // Ensure the path matches your image location
                 fit: BoxFit.cover,
               ),
             ),
           ),
-          // Foreground content
-          Container(
-            width: double.infinity,
-            height: double.infinity,
-            color: Colors.black.withOpacity(0.4), // Overlay to darken image
+          // Overlay content
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                // Geeta text
+                // 'Geeta.' Text
                 Text(
-                  "Geeta.",
+                  'Geeta.',
                   style: TextStyle(
-                    fontSize: 55, // As per your example
+                    fontSize: 60,
+                    fontFamily: 'Roboto', // Ensure you have the font available
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
-                    fontFamily: 'SansSerif', // Adjust font family as needed
                   ),
                 ),
                 SizedBox(height: 20),
-                // Shop Now Button
+                // 'SHOP NOW' button
                 ElevatedButton(
                   onPressed: () {
-                    // Add your onPressed logic here
+                    // Add your button functionality here
                   },
                   style: ElevatedButton.styleFrom(
-                    foregroundColor: Colors.black,
-                    backgroundColor: Colors.white, // Button text color
+                    padding: EdgeInsets.symmetric(horizontal: 60, vertical: 20),
+                    backgroundColor: Colors
+                        .transparent, // Button's background color transparent
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
+                      borderRadius:
+                          BorderRadius.circular(30), // Rounded corners
+                      side: BorderSide(
+                          color: Colors.white, width: 2), // White border
                     ),
-                    padding: EdgeInsets.symmetric(
-                        horizontal: 40, vertical: 15), // Button size
                   ),
                   child: Text(
-                    "SHOP NOW",
+                    'SHOP NOW',
                     style: TextStyle(
-                      fontSize: 18, // Button text size
+                      fontSize: 20,
+                      color: Colors.white,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
-                SizedBox(height: 40), // Add spacing below button
-                // Dots Indicator (just for visual, not functional)
+                SizedBox(height: 30),
+                // Page indicator (dots)
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.circle, size: 8, color: Colors.white),
-                    SizedBox(width: 5),
-                    Icon(Icons.circle,
-                        size: 8, color: Colors.white.withOpacity(0.5)),
-                    SizedBox(width: 5),
-                    Icon(Icons.circle,
-                        size: 8, color: Colors.white.withOpacity(0.5)),
+                    _buildPageIndicator(true), // Active dot
+                    _buildPageIndicator(false), // Inactive dot
+                    _buildPageIndicator(false), // Inactive dot
                   ],
                 ),
-                SizedBox(height: 40), // Final spacing before end of screen
+                SizedBox(height: 50), // Space at the bottom
               ],
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  // Page indicator builder
+  Widget _buildPageIndicator(bool isActive) {
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 5),
+      width: isActive ? 12 : 8,
+      height: isActive ? 12 : 8,
+      decoration: BoxDecoration(
+        color: isActive ? Colors.white : Colors.grey,
+        shape: BoxShape.circle,
       ),
     );
   }
