@@ -1,0 +1,42 @@
+name: geeta_app
+description: "A new Flutter project."
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  device_preview: ^1.2.0
+  flutter_screenutil: ^5.9.3
+  loading_animation_widget: ^1.2.0
+  device_frame: ^1.2.0
+  http: ^1.2.2  # This is used to make HTTP requests
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/products.json 
+    - assets/pink_hoodie.png
+    - assets/leather_jacket.png
+    - assets/blue_jeans.png
+    - assets/printed_shirt.png # Ensure your local JSON file is listed here
+    - assets/products.json
+
+  fonts:
+    - family: Lato
+      fonts:
+        - asset: fonts/Lato-Black.ttf
+
