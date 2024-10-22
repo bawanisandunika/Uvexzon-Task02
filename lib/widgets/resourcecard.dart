@@ -33,11 +33,41 @@ class ResourceCard extends StatelessWidget {
         ),
         child: Column(
           children: [
-            // Product image
+            // Use Stack to overlay the heart icon on top of the product image
             Expanded(
-              child: Image.network(
-                product.imageUrl,
-                fit: BoxFit.cover,
+              child: Stack(
+                children: [
+                  // Product image
+                  ClipRRect(
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(15.sp),
+                      topRight: Radius.circular(15.sp),
+                    ),
+                    child: Image.network(
+                      product.imageUrl,
+                      fit: BoxFit.cover,
+                      width: double.infinity,
+                      height: double.infinity, // Fill the available space
+                    ),
+                  ),
+                  // Heart icon positioned in the top-right corner
+                  Positioned(
+                    top: 8.sp,
+                    right: 8.sp,
+                    child: GestureDetector(
+                      onTap: () {
+                        // Add your favorite/unfavorite logic here
+                        print('Heart icon tapped!');
+                      },
+                      child: Icon(
+                        Icons
+                            .favorite_border, // Change to Icons.favorite when liked
+                        color: Color.fromARGB(255, 27, 27, 27),
+                        size: 24.sp,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
             SizedBox(height: 10.sp),
