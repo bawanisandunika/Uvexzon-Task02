@@ -16,7 +16,7 @@ dependencies:
   flutter_screenutil: ^5.9.3
   loading_animation_widget: ^1.2.0
   device_frame: ^1.2.0
-  http: ^1.2.2  # This is used to make HTTP requests
+  http: ^1.2.2
 
 dev_dependencies:
   flutter_test:
@@ -28,15 +28,14 @@ flutter:
 
   assets:
     - assets/
-    - assets/products.json 
+    - assets/products.json
     - assets/pink_hoodie.png
     - assets/leather_jacket.png
     - assets/blue_jeans.png
-    - assets/printed_shirt.png # Ensure your local JSON file is listed here
+    - assets/printed_shirt.png
     - assets/products.json
 
   fonts:
     - family: Lato
       fonts:
         - asset: fonts/Lato-Black.ttf
-
